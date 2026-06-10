@@ -1,0 +1,19 @@
+{% load i18n qsargs_tags %}
+{% load lucide_tags %}
+
+{% if is_paginated %}
+  <ul class="pagination float-left">
+    {% if page_obj.has_previous %}
+      <li class="page-item"><a class="page-link" href="{% query_param_add 'page' "1" %}">{% icon "angle-double-left" %}</a></li>
+      <li class="page-item"><a class="page-link" href="{% query_param_add "page" page_obj.previous_page_number %}">{% icon "angle-left" %}</a>
+      </li>
+    {% endif %}
+    {% for i in paginator.page_range %}{% if i|add:3 > page_obj.number and i < page_obj.number|add:3 %}
+      <li class="page-item"><a class="page-link{% if page_obj.number == i %} active{% endif %}" href="{% query_param_add "page" i %}">{{ i }}</a></li>
+    {% endif %}{% endfor %}
+    {% if page_obj.has_next %}
+      <li class="page-item"><a class="page-link" href="{% query_param_add "page" page_obj.next_page_number %}">{% icon "angle-right" %}</a></li>
+      <li class="page-item"><a class="page-link" href="{% query_param_add "page" page_obj.paginator.num_pages %}">{% icon "angle-double-right" %}</a></li>
+    {% endif %}
+  </ul>
+{% endif %}

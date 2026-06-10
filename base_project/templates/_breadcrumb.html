@@ -1,0 +1,17 @@
+{% load lucide_tags %}
+<nav class="site-breadcrumb" aria-label="breadcrumb">
+  <ol>
+    {% for crumb in breadcrumbs %}
+    {% if crumb.url %}
+    <li class="site-breadcrumb__item">
+      <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+      <span class="site-breadcrumb__sep" aria-hidden="true">{% icon "chevron-right" %}</span>
+    </li>
+    {% else %}
+    <li class="site-breadcrumb__item site-breadcrumb__item--active" aria-current="page">
+      {{ crumb.label }}
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ol>
+</nav>

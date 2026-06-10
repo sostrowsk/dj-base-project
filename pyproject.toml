@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "dj-base-project"
+version = "0.1.0"
+description = "Reusable Django base app: generic base templates, url/qsargs/lucide templatetags, htmx static, Redis client with circuit breaker, distributed Redis locks, retry utilities and COOP/DB middleware."
+authors = ["Stefan Ostrowski <ostrowski@addvendo.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "base_project" }]
+include = [
+    { path = "base_project/templates/**/*", format = ["sdist", "wheel"] },
+    { path = "base_project/static/**/*", format = ["sdist", "wheel"] },
+    { path = "base_project/locale/**/*", format = ["sdist", "wheel"] },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+django = "^5"
+redis = "^7"
+pybreaker = "^1"
+channels = "^4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

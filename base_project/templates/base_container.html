@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container my-3 my-lg-5">
+  {% if breadcrumbs %}{% include "_breadcrumb.html" %}{% endif %}
+  {% block heading %}{% endblock %}
+  <div class="row">
+    <div class="col">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

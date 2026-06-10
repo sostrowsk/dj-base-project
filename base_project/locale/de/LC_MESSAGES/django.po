@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dj-base-project\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-10 19:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: templates/_message.html:10
+msgid "Meassage"
+msgstr "Nachricht"
+
+#: templates/_message.html:21
+msgid "OK"
+msgstr "OK"
+
+#: templates/empty.html:6
+msgid "Leasing and hire purchase calculator"
+msgstr "Leasing- und Mietkauf-Rechner"
+
+#: templates/empty.html:7 templates/empty.html:9
+msgid "Leasing caclulator"
+msgstr "Leasing-Rechner"

@@ -1,0 +1,24 @@
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% endblock %}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% block extra_css %}{% endblock %}
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+<header>{% block header %}{% endblock %}</header>
+<main role="main">
+  {% block message %}{% include "_message.html" %}{% endblock %}
+  {% block main-outer %}{% block main %}
+  {% block content %}{% include "_empty.html" with block="Main" %}{% endblock %}{% endblock %}{% endblock %}
+</main>
+<footer>{% block footer %}{% endblock %}</footer>
+{% block scripts %}{% endblock scripts %}
+</body>
+</html>
